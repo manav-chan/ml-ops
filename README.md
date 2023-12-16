@@ -16,3 +16,4 @@ conda activate /path/to/venv
 ```console
 pip install -r requirements.txt
 ```
+- src directory contains components directory which contains various modules to be used in our project.
