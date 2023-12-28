@@ -69,3 +69,6 @@ Contains the code for logging, the format associated with it and stores the logs
 
 ### utils.py
 Extra utilities that can be used by other components in our application.
+
+
+## Converting code to modular code
