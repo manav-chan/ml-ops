@@ -82,3 +82,5 @@ Extra utilities that can be used by other components in our application.
 - 'templates' contain various html files to be rendered.
 
 ## Deploying to AWS 
+- AWS Elastic Beanstalk is used for deployment.
+- Create python.config file in .ebextensions directory.
