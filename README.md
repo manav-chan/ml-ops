@@ -21,24 +21,24 @@ pip install -r requirements.txt
 ## Project Structure
 
 .
-├── .gitignore
-├── README.md
-├── requirements.txt
-├── setup.py
-├── logs
-├── notebook
-├── venv
-└── src
-    ├── components
-    │   ├── __init__.py
-    │   ├── data_ingestion.py
-    │   ├── data_transformation.py
-    │   └── model_trainer.py
-    ├── __init__.py
-    ├── exception.py
-    ├── logger.py
-    ├── pipeline
-    │   ├── __init__.py
-    │   ├── predict_pipeline.py
-    │   └── train_pipeline.py
-    └── utils.py
+├── .gitignore\
+├── README.md\
+├── requirements.txt\
+├── setup.py\
+├── logs\
+├── notebook\
+├── venv\
+└── src\
+    ├── components\
+    │   ├── __init__.py\
+    │   ├── data_ingestion.py\
+    │   ├── data_transformation.py\
+    │   └── model_trainer.py\
+    ├── __init__.py\
+    ├── exception.py\
+    ├── logger.py\
+    ├── pipeline\
+    │   ├── __init__.py\
+    │   ├── predict_pipeline.py\
+    │   └── train_pipeline.py\
+    └── utils.py\
