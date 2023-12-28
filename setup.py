@@ -1,13 +1,16 @@
 from setuptools import find_packages, setup
-# find_packages finds all the packages present in the directory 
+# find_packages finds all the packages present in the directory that have init.py file
 from typing import List
 
 
 HYPHEN_E_DOT = '-e .'
+# Type Hints Function Header
 def get_requirements(file_path:str)->List[str]:
     requirements = []
     with open(file_path) as file_obj:
         requirements = file_obj.readlines()
+        
+        #using List comprehension
         requirements = [req.replace("\n", "") for req in requirements]
 
         if HYPHEN_E_DOT in requirements:
