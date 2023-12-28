@@ -27,6 +27,8 @@ pip install -r requirements.txt
 ├── logs
 ├── notebook
 ├── venv
+├── templates
+├── app.py
 └── src
     ├── __init__.py
     ├── components
@@ -72,3 +74,11 @@ Extra utilities that can be used by other components in our application.
 
 
 ## Converting code to modular code
+- Put the required code into various components as defined above in the project structure.
+- Create the prediction pipeline for predicting the data given as input in the Flask app.
+
+## Making a web app
+- Flask has been used as the web server.
+- 'templates' contain various html files to be rendered.
+
+## Deploying to AWS 
