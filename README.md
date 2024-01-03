@@ -45,31 +45,31 @@ pip install -r requirements.txt
     └── utils.py
 ```
 
-### .gitignore
+- **.gitignore**
 Conatins files and directories that are to be ignored by git while commiting and pushing to the main repository.
 
-### requirements.txt
+- **requirements.txt**
 Contains the names of all the libraries required for the project. Serves as en entry point and calls the setup.py file because of the '-e' for packaging of the application.
 
-### setup.py
+- **setup.py**
 Builds the package of our application, will also create a package of the directories having __init_.py file in them.
 
-### logs
+- **logs**
 Stores the logs when exceptions are encountered.
 
-### notebook
+- **notebook**
 Stores the Jupyter notebook file used for exploratory data analysis, contains the code that needs to be converted to modules and pipelines to be used for our application.
 
-### venv
+- **venv**
 Created using conda virtual environment.
 
-### exception.py
+- **exception.py**
 Contains the code for handling custom exceptions in our aplication.
 
-### logger.py
+- **logger.py**
 Contains the code for logging, the format associated with it and stores the logs in the 'logs' directory.
 
-### utils.py
+- **utils.py**
 Extra utilities that can be used by other components in our application.
 
 
@@ -81,6 +81,14 @@ Extra utilities that can be used by other components in our application.
 - Flask has been used as the web server.
 - 'templates' contain various html files to be rendered.
 
-## Deploying to AWS 
-- AWS Elastic Beanstalk is used for deployment.
-- Create python.config file in .ebextensions directory.
+## Deploying to AWS Beanstalk
+- Create python.config file in .ebextensions directory with the elastic beanstalk configuration.
+- Creating EC2 instacne profile for beanstalk.
+    - Open IAM Console. In the navigation pane of the console, choose Roles and then create role
+    - Under Trusted entity type, choose AWS service. Under Use case, choose EC2, Choose Next
+    - Attach- AWSElasticBeanstalkWebTier, AWSElasticBeanstalkWorkerTier, AWSElasticBeanstalkMulticontainerDocker. Choose Next
+    - Enter a name for the role - aws-elasticbeanstalk-ec2-role. Choose Create role.
+- Create web app using Elastic Beanstalk service on AWS using Python as platform and selecting 'sample application' under application code.
+- Creating pipeline using AWS Codepipeline service.
+    - Select GitHub in Source Provider and enter required repository details.
+    - Select AWS Elastic Beanstalk under Deploy provider and enter required application information.
