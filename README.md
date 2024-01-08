@@ -92,3 +92,8 @@ Extra utilities that can be used by other components in our application.
 - Creating pipeline using AWS Codepipeline service.
     - Select GitHub in Source Provider and enter required repository details.
     - Select AWS Elastic Beanstalk under Deploy provider and enter required application information.
+
+## Deploying to AWS using EC2 instande with Docker
+- Create Dockerfile at the root level of the application and build the image.
+- Set up GitHub actions by creating .github directory with main.yaml specifying the workflow for CI/CD.
+- AWS ECR is used for storing the private docker images created in our application.
