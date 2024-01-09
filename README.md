@@ -102,3 +102,30 @@ Extra utilities that can be used by other components in our application.
     - AmazonEC2FullAccess
 - Create access key for CLI for the IAM user created. 
 - Create private ECR repository.
+- Launch EC2 instance:
+    - Select Ubuntu as OS Image
+    - Select sample-ec2 keypair
+    - Allow SSH, HTTP, HTTPS traffic
+- After creating EC2 instance, go to Security -> Security Groups -> Edit inbound rules -> Add rule -> Type: Custom TCP, Protocol: TCP, Port: 8080, Source: Custom.
+- Connect to EC2 instance and run the following commands:
+```console
+sudo apt-get update -y
+sudo apt-get upgrade -y
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker ubuntu
+newgrp docker
+```
+- On GitHub, go to Settings -> Actions -> Runners -> Create new runner.
+- Excecute the mentioned commands inside the EC2 instance.
+- Press Enter when prompted with name of runner group and enter 'self-hosted' as runner name.
+- Runner is now successfully created which runs on the EC2 instance and looks for any commits in the codebase hosted on GitHub.
+- On GitHub, go to Settings -> Secrets and Variables -> Actions -> New repository secret and Create the following secrets:
+    - Name: AWS_ACCESS_KEY_ID and add access key id of IAM user created.
+    - Name: AWS_SECRET_ACCESS_KEY and add secret access key of IAM user created.
+    - Name: AWS_REGION and add the region instance is running in.
+    - Name: AWS_ECR_LOGIN_URI and the ECR URI of the ECR created excluding the name of ECR repo in the URI
+    - Name: ECR_REPOSITORY_NAME and add ECR repository name excluded from the above step
+ 
+## Congratulations!
+Application is successfully deployed with continuous integration, delivery and deployment! Remember to terminate the EC2 instance and to delete the ECR repository.
