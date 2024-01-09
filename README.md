@@ -97,3 +97,8 @@ Extra utilities that can be used by other components in our application.
 - Create Dockerfile at the root level of the application and build the image.
 - Set up GitHub actions by creating .github directory with main.yaml specifying the workflow for CI/CD.
 - AWS ECR is used for storing the private docker images created in our application.
+- Create IAM user with the following permissions policies:
+    - AmazonEC2ContainerRegistryFullAccess
+    - AmazonEC2FullAccess
+- Create access key for CLI for the IAM user created. 
+- Create private ECR repository.
