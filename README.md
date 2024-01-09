@@ -20,6 +20,8 @@ pip install -r requirements.txt
 ## Project Structure
 ```terminal
 .
+├── .ebextensions/python.config
+├── .github/workflows/main.yaml
 ├── .gitignore
 ├── README.md
 ├── requirements.txt
@@ -28,7 +30,8 @@ pip install -r requirements.txt
 ├── notebook
 ├── venv
 ├── templates
-├── app.py
+├── application.py
+├── Dockerfile
 └── src
     ├── __init__.py
     ├── components
